@@ -1,0 +1,5 @@
+/home/mushrif/Desktop/Academics/Comp Geometry/Assignments/Assignment1/CMakeFiles/edit_cache.dir
+/home/mushrif/Desktop/Academics/Comp Geometry/Assignments/Assignment1/CMakeFiles/rebuild_cache.dir
+/home/mushrif/Desktop/Academics/Comp Geometry/Assignments/Assignment1/CMakeFiles/cgal_check_build_system.dir
+/home/mushrif/Desktop/Academics/Comp Geometry/Assignments/Assignment1/CMakeFiles/ALL_CGAL_TARGETS.dir
+/home/mushrif/Desktop/Academics/Comp Geometry/Assignments/Assignment1/CMakeFiles/Q1.dir

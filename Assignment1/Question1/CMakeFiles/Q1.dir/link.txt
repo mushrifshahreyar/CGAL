@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/Q1.dir/Q1.cpp.o -o Q1  /usr/lib/libCGAL_Qt5.so.14.0.0 /usr/lib/libCGAL.so.13.0.3 /usr/lib/libmpfr.so /usr/lib/libgmp.so /usr/lib/libQt5OpenGL.so.5.15.1 /usr/lib/libQt5Svg.so.5.15.1 /usr/lib/libQt5Widgets.so.5.15.1 /usr/lib/libQt5Gui.so.5.15.1 /usr/lib/libQt5Xml.so.5.15.1 /usr/lib/libQt5Core.so.5.15.1 
