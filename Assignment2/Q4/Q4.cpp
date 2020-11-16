@@ -9,7 +9,7 @@ Task to handle:
 
 */
 
-float r,g,b,x,y;
+float x,y;
 bool check=true;
 
 void Init() {
