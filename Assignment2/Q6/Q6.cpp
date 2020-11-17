@@ -57,7 +57,7 @@ int main(int argc, char** argv) {
     readFile("input.txt");
     
     glutInit(&argc, argv);
-    glutCreateWindow("Q1 - Background Color set"); 
+    glutCreateWindow("Q6 - Polygon Pattern"); 
     glutInitWindowSize(640,480);
     glutInitWindowPosition(50, 50);
     gluOrtho2D(-1.0, 1.0, -1.0, 1);
