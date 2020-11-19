@@ -2,7 +2,6 @@
 #include <iostream>
 #include <fstream>
 #include <boost/format.hpp>
-#include <QtGui>
 #include <CGAL/Qt/GraphicsViewNavigation.h>
 #include <CGAL/Point_2.h>
 #include <CGAL/Line_2.h>
@@ -12,8 +11,7 @@
 #include <QApplication>
 #include <QGraphicsScene>
 #include <QGraphicsView>
-
-
+#include <string>
 
 using namespace CGAL;
 using namespace std;
@@ -22,7 +20,6 @@ typedef Point_2< Cartesian<double> > Point;
 typedef Line_2< Cartesian<double> > Segment;
 
  vector< pair< Point, Point> > readFile(string temp) {
-    
     string line;
     ifstream file;
     file.open(temp);
@@ -70,6 +67,8 @@ void findLine(Point p1, Point q1, Point p2, Point q2) {
     double y = (((line2.m * line1.c) - (line1.m * line2.c))/(line2.m - line1.m));
     cout<<x<<" "<<y<<endl;
     // return line1;
+    
+    
 }
 
 int main(int argc, char **argv)
@@ -112,10 +111,7 @@ int main(int argc, char **argv)
     }
 
     cout<<scenes.size()<<"\n";
-    
-    
-    // view->show();
-
-	return 0;
+        
+    return 0;
 
 }

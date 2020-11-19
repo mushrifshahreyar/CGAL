@@ -1,5 +1,5 @@
-#include<GL/glut.h> 
-#include<bits/stdc++.h>
+#include <GL/glut.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -9,63 +9,57 @@ Task to handle:
 
 */
 
-float x,y;
-bool check=true;
+float x, y;
+bool check = true;
+int width, height;
 
 void Init() {
-    glutInitWindowSize(640,480);
-    glutInitWindowPosition(10,10);
-    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-    glutCreateWindow("Q4 - Mouse Drawing");
-    gluOrtho2D(0.0, 640.0, 0.0, 480.0);
-    glClearColor(1, 1, 1, 0);
-    glClear(GL_COLOR_BUFFER_BIT);
-
+  glutInitWindowSize(640, 480);
+  glutInitWindowPosition(10, 10);
+  glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+  glutCreateWindow("Q4 - Mouse Drawing");
+  gluOrtho2D(0.0, 640.0, 0.0, 480.0);
+  glClearColor(1, 1, 1, 0);
+  glClear(GL_COLOR_BUFFER_BIT);
 }
 
-void mouse(int button, int state, int mousex, int mousey)
-{
-    if(button==GLUT_LEFT_BUTTON && state == GLUT_DOWN)
-    {
-        check=true;
-        x = mousex;
-        y = 480 - mousey;
-    }
-    else {
-        check = false;
-    }
-            
-    glutPostRedisplay();
+void mouse(int button, int state, int mousex, int mousey) {
+  if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
+    check = true;
+    x = mousex;
+    y = 480 - mousey;
+  } else {
+    check = false;
+  }
+
+  glutPostRedisplay();
 }
 
 void motionfunc(int Mx, int My) {
-    x = Mx;
-    y = 480 - My;
+  x = Mx;
+  y = 480 - My;
 
-    glutPostRedisplay();
+  glutPostRedisplay();
 }
 
-void display(void)
-{  
-    glColor3f(0,0,0);
-    glPointSize(5); 
-    
-    if(check) {
-        glBegin(GL_POINTS);
-        glVertex2i(x,y);
-        glEnd();
-    }
-    glFlush();    
+void display(void) {
+  glColor3f(0, 0, 0);
+  glPointSize(5);
+
+  if (check) {
+    glBegin(GL_POINTS);
+    glVertex2i(x, y);
+    glEnd();
+  }
+  glFlush();
 }
 
-int main(int argc,char** argv)
-{
-	glutInit(&argc,argv);
-    Init();  
-    
-    
-    glutDisplayFunc(display);
-    glutMouseFunc(mouse);
-    glutMotionFunc(motionfunc);
-    glutMainLoop();
+int main(int argc, char **argv) {
+  glutInit(&argc, argv);
+  Init();
+  
+  glutDisplayFunc(display);
+  glutMouseFunc(mouse);
+  glutMotionFunc(motionfunc);
+  glutMainLoop();
 }

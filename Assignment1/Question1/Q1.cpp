@@ -3,7 +3,7 @@
 #include <fstream>
 #include <boost/format.hpp>
 #include <QtGui>
-#include <CGAL/Qt/GraphicsViewNavigation.h>
+// #include <CGAL/Qt/GraphicsViewNavigation.h>
 #include <CGAL/Point_2.h>
 #include <CGAL/Cartesian.h>
 #include <QLineF>
