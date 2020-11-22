@@ -3,7 +3,6 @@
 #include <fstream>
 #include <boost/format.hpp>
 #include <QtGui>
-// #include <CGAL/Qt/GraphicsViewNavigation.h>
 #include <CGAL/Point_2.h>
 #include <CGAL/Cartesian.h>
 #include <QLineF>
@@ -11,6 +10,7 @@
 #include <QApplication>
 #include <QGraphicsScene>
 #include <QGraphicsView>
+
 
 
 using namespace CGAL;
@@ -52,7 +52,7 @@ int main(int argc, char **argv)
     QApplication app(argc, argv);
     
     QGraphicsScene scene;
-    scene.setSceneRect(0,0, 500,300);
+    scene.setSceneRect(0,0, 640,320);
     
     for (auto it=points.begin(); it != points.end(); ++it) {
         Point temp = *it;

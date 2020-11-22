@@ -179,9 +179,6 @@ int main(int argc, char **argv) {
                 string finalStr = "\nNot intersecting";
                 scene.addText(QString::fromStdString(finalStr));
             }
-
-            
-
             scene.setSceneRect(0, 0, 500, 500);
 
             scene.addLine(p1.x(), p1.y(), q1.x(), q1.y());
