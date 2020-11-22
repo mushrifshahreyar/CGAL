@@ -7,6 +7,7 @@
 #include <QApplication>
 #include <QGraphicsScene>
 #include <QGraphicsView>
+#include <qgraphicsitem.h>
 #include <string>
 #include <QString>
 
@@ -14,7 +15,6 @@ using namespace CGAL;
 using namespace std;
 
 typedef Point_2<Cartesian<double>> Point;
-typedef Line_2<Cartesian<double>> Segment;
 
 vector<pair<Point, Point>> readFile(string temp) {
     string line;
@@ -159,9 +159,15 @@ int main(int argc, char **argv) {
             Point p2 = lines[j].first;
             Point q2 = lines[j].second;
 
-            
-            scene.addText(QString::fromStdString("Line : " + to_string(i+1) + " " + to_string(j+1)));
+            scene.setSceneRect(0, 0, 500, 500);
 
+            QGraphicsTextItem *text;
+
+            scene.addLine(p1.x(), p1.y(), q1.x(), q1.y());
+            scene.addLine(p2.x(), p2.y(), q2.x(), q2.y());
+
+            string message = "Line : " + to_string(i+1) + " " + to_string(j+1);
+            
             if (findIntersection(p1, q1, p2, q2)) {
             
                 Point intPoint = findPoint(p1,q1,p2,q2);
@@ -169,21 +175,15 @@ int main(int argc, char **argv) {
                 string x_str = to_string(intPoint.x());
                 string y_str = to_string(intPoint.y());
                 
-                string finalStr = "\n( " + x_str + " , " + y_str + "\n";
-
-                scene.addText(QString::fromStdString(finalStr));
-                
+                message += "\nLine Intersect\n( " + x_str + " , " + y_str + ")";
             }
             else {
-                
-                string finalStr = "\nNot intersecting";
-                scene.addText(QString::fromStdString(finalStr));
+                message += "\nNot intersecting";
             }
-            scene.setSceneRect(0, 0, 500, 500);
 
-            scene.addLine(p1.x(), p1.y(), q1.x(), q1.y());
-            scene.addLine(p2.x(), p2.y(), q2.x(), q2.y());
-
+            text = scene.addText(QString::fromStdString(message));
+            text->setPos(scene.sceneRect().width()/2 - 100, scene.sceneRect().height()-70); 
+            
             QGraphicsView *view = new QGraphicsView(&scene);
             view->show();
 

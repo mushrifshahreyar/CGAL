@@ -13,12 +13,12 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <string>
+#include <QGraphicsTextItem>
 
-using namespace CGAL;
+// using namespace CGAL;
 using namespace std;
 
-typedef Point_2< Cartesian<double> > Point;
-typedef Line_2< Cartesian<double> > Segment;
+typedef CGAL::Point_2< CGAL::Cartesian<double> > Point;
 
 typedef struct Triangle {
     Point a,b,c;
@@ -81,8 +81,10 @@ int main(int argc, char **argv)
     scene.addLine(triangle.b.x(), triangle.b.y(), triangle.c.x(), triangle.c.y());
     scene.addLine(triangle.a.x(), triangle.a.y(), triangle.c.x(), triangle.c.y());
 
-    scene.addText(QString::fromStdString(to_string(area)));
-
+    string str = "Area is : " + to_string(area);
+    QGraphicsTextItem *text = scene.addText(QString::fromStdString(str));
+    text->setPos(scene.sceneRect().width()/2 - 100, scene.sceneRect().height()-50); 
+    
     QGraphicsView* view = new QGraphicsView(&scene);
     view->show();
     app.exec();

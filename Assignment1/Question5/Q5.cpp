@@ -13,6 +13,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <string>
+#include <QGraphicsTextItem>
 
 using namespace CGAL;
 using namespace std;
@@ -75,8 +76,8 @@ double findPolygonArea( vector< Point > points) {
 
         area += triArea;
 
-        cout<<"Triangle 0 "<<i<<" "<<i+1<<endl;
-        cout<<triArea<<endl;
+        // cout<<"Triangle 0 "<<i<<" "<<i+1<<endl;
+        // cout<<triArea<<endl;
 
     }
 
@@ -109,8 +110,11 @@ int main(int argc, char **argv)
 
     }
     scene.addLine(points[0].x(),points[0].y(), points[n-1].x(), points[n-1].y());
+    string str = "Area is : "+to_string(area);
+    QGraphicsTextItem *text = scene.addText(QString::fromStdString(str));
+    text->setPos(scene.sceneRect().width()/2 - 100, scene.sceneRect().height()-50); 
     
-    scene.addText(QString::fromStdString(to_string(area)));
+    
 
     QGraphicsView* view = new QGraphicsView(&scene);
     view->show();

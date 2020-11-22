@@ -12,12 +12,8 @@
 #include <QApplication>
 #include <QGraphicsScene>
 #include <QGraphicsView>
-#include <ostream>
 #include <qcolor.h>
-#include <qnamespace.h>
-#include <qpainter.h>
 #include <qpolygon.h>
-#include <utility>
 
 using namespace CGAL;
 using namespace std;

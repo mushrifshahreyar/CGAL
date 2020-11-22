@@ -13,13 +13,10 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 
-
-
 using namespace CGAL;
 using namespace std;
 
 typedef Point_2< Cartesian<double> > Point;
-typedef Line_2< Cartesian<double> > Segment;
 
  map< Point, Point> readFile(string temp) {
     
@@ -65,7 +62,6 @@ int main(int argc, char **argv)
         Point q = it->second;
         
         scene.addLine(p.x(),p.y(), q.x(), q.y());
-
     }
 
 	QGraphicsView* view = new QGraphicsView(&scene);
