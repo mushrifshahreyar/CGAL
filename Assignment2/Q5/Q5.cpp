@@ -65,7 +65,7 @@ int main(int argc, char** argv) {
     readFile("input.txt");
     
     glutInit(&argc, argv);
-    glutCreateWindow("Q5 - #D Rectangle"); 
+    glutCreateWindow("Q5 - Rectangles"); 
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
     glutInitWindowSize(640,480);
     glutInitWindowPosition(50, 50);

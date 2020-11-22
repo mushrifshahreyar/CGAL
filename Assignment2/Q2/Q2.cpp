@@ -53,7 +53,7 @@ int main(int argc, char** argv) {
     readFile("input.txt");
     
     glutInit(&argc, argv);
-    glutCreateWindow("Q1 - Points Marking"); 
+    glutCreateWindow("Q2 - Points Marking"); 
     glutInitWindowSize(320, 320);
     glutInitWindowPosition(50, 50);
 
